@@ -11,7 +11,7 @@ Tutorial to show how to build an OAuth API with Laravel and dingo/api package.
   * [Postman](http://www.getpostman.com/) installed
 
 
-##Chapter 0 - Adding packages and configuring composer
+##Chapter 0 - Adding packages/composer stuff
 
 - First let's name our app and describe what it does.
 We'll do that by filling "name", "description" and "keywords" tags in
