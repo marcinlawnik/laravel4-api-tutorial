@@ -4,7 +4,12 @@
 	"keywords": ["api", "laravel", "tutorial"],
 	"license": "unlicense",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"dingo/api": "0.7-dev",
+		"fzaninotto/faker": "1.5.*"
+	},
+	"require-dev": {
+		"barryvdh/laravel-ide-helper": "1.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -18,10 +23,12 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+			"php artisan ide-helper:generate",
 			"php artisan clear-compiled",
 			"php artisan optimize"
 		],
 		"post-update-cmd": [
+			"php artisan ide-helper:generate",
 			"php artisan clear-compiled",
 			"php artisan optimize"
 		],
