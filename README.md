@@ -13,42 +13,41 @@ Tutorial to show how to build an OAuth API with Laravel and dingo/api package.
 
 ##Chapter 0 - Adding packages and configuring composer
 
-1.
-First let's name our app and describe what it does.
+- First let's name our app and describe what it does.
 We'll do that by filling "name", "description" and "keywords" tags in
 composer.json.
 
-**Copypasta**
+#####Copypasta
 
     //DIY or leave "as is" if you're lazy,
     //but just do it for the sake of future self
 
-2.
-To build our api we're going to use the following packages:
+- To build our api we're going to use the following packages:
 
-  * dingo/api A package that simplifies the API development process.
-  * fzaninotto/faker A fake data generator to give our API something to serve
-  * lucadegasperi/oauth2-server-laravel OAuth stuff
+
+    dingo/api A package that simplifies the API development process.
+    fzaninotto/faker A fake data generator to give our API something to serve
+    lucadegasperi/oauth2-server-laravel OAuth stuff
 
 Additionally, for development purposes other packages were used, listed in the
 "require-dev" section. To omit the installation of those, use "--no-dev" switch
 while doing either
 
     composer update
-    #or
+    //or
     composer install
 
 It is recommended to use `install` over `update` to avoid installing newer
 versions that weren't desired.
 
-   * barryvdh/laravel-ide-helper This package automatically generates phpdoc
+    barryvdh/laravel-ide-helper This package automatically generates phpdoc
     that is understandable by your IDE and enables automatic completion. I also
     added commands to `scripts` section to automatically run the package on
     `composer install` and `composer update`
 
-3. Add required service providers and aliases to `app/config/app.php`
+- Add required service providers and aliases to `app/config/app.php`
 
-**Copypasta**
+*Copypasta*
 
     //Providers
     [
@@ -69,9 +68,9 @@ versions that weren't desired.
     	//'Controller'        => 'Illuminate\Routing\Controller',
     ]
 
-4. Configure your database in `app/config/database.php`
+- Configure your database in `app/config/database.php`
 
-**Copypasta**
+*Copypasta*
 
     //DIY or be lazy like me
 
@@ -79,30 +78,30 @@ versions that weren't desired.
     'default' => 'sqlite',
     ]
 
-5. Run `composer install` to download the dependencies. A `composer.lock` file
+- Run `composer install` to download the dependencies. A `composer.lock` file
 is created that limits installation to specific versions of our packages.
 
-**Copypasta**
+*Copypasta*
 
     composer install
 
-6. Publish configuration files for packages.
+- Publish configuration files for packages.
 
-**Copypasta**
+*Copypasta*
 
     php artisan config:publish dingo/api
     php artisan config:publish lucadegasperi/oauth2-server-laravel
 
-7. Configure the `vendor` of API in `app/config/packages/dingo/api/config.php`
+- Configure the `vendor` of API in `app/config/packages/dingo/api/config.php`
 
-**Copypasta**
+*Copypasta*
 
     [
         'vendor' => 'DIY',
     ]
     
-8. Run migrations for packages
+- Run migrations for packages
 
-**Copypasta**
+*Copypasta*
 
     php artisan migrate --package="lucadegasperi/oauth2-server-laravel"
