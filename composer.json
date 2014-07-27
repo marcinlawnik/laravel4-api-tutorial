@@ -1,8 +1,8 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
-	"license": "MIT",
+	"name": "marcinlawnik/laravel4-api-tutorial",
+	"description": "How to build an API with Laravel and dingo/api package",
+	"keywords": ["api", "laravel", "tutorial"],
+	"license": "unlicense",
 	"require": {
 		"laravel/framework": "4.2.*"
 	},
