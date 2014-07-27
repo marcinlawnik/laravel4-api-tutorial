@@ -97,6 +97,7 @@ return array(
 
         'Dingo\Api\ApiServiceProvider',
         'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
+        'Cartalyst\Sentry\SentryServiceProvider',
         //Remove following if you're not using the ide-helper
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
@@ -156,6 +157,7 @@ return array(
 
         'API' => 'Dingo\Api\Facades\API',
         'Controller' => 'Dingo\Api\Routing\Controller',
+        'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
         'AuthorizationServer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizationServerFacade',
         'ResourceServer' => 'LucaDegasperi\OAuth2Server\Facades\ResourceServerFacade',
 		'App'               => 'Illuminate\Support\Facades\App',

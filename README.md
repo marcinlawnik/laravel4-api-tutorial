@@ -30,18 +30,7 @@ composer.json.
     dingo/api A package that simplifies the API development process.
     fzaninotto/faker A fake data generator to give our API something to serve
     lucadegasperi/oauth2-server-laravel OAuth stuff
-
-Additionally, for development purposes other packages were used, listed in the
-"require-dev" section. To omit the installation of those, use "--no-dev" switch
-while doing either
-
-    composer update
-    //or
-    composer install
-
-It is recommended to use `install` over `update` to avoid installing newer
-versions that weren't desired.
-
+    cartalyst/sentry Authorization and authentication package
     barryvdh/laravel-ide-helper This package automatically generates phpdoc
     that is understandable by your IDE and enables automatic completion. I also
     added commands to `scripts` section to automatically run the package on
@@ -55,6 +44,7 @@ versions that weren't desired.
     [
         'Dingo\Api\ApiServiceProvider',
         'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
+        'Cartalyst\Sentry\SentryServiceProvider',
         //Remove following if you're not using the ide-helper
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
     ]
@@ -62,6 +52,7 @@ versions that weren't desired.
     [
         'API' => 'Dingo\Api\Facades\API',
         'Controller' => 'Dingo\Api\Routing\Controller',
+        'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
         'AuthorizationServer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizationServerFacade',
         'ResourceServer' => 'LucaDegasperi\OAuth2Server\Facades\ResourceServerFacade',
     ]
@@ -99,7 +90,7 @@ is created that limits installation to specific versions of our packages.
 
     php artisan config:publish dingo/api
     php artisan config:publish lucadegasperi/oauth2-server-laravel
-
+    php artisan config:publish cartalyst/sentry
 
 
 - Configure the `vendor` of API in `app/config/packages/dingo/api/config.php`
@@ -112,8 +103,17 @@ is created that limits installation to specific versions of our packages.
 
 
 
-- Run migrations for packages
+- Run database migrations for packages
 
 #####Copypasta
 
     php artisan migrate --package="lucadegasperi/oauth2-server-laravel"
+    php artisan migrate --package=cartalyst/sentry
+
+
+##Chapter 1 - Prepare some data to be served
+
+##Chapter 2 - Create API endpoints
+
+##Chapter 3 - OAuth application
+
