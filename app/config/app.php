@@ -95,6 +95,10 @@ return array(
 
 	'providers' => array(
 
+        'Dingo\Api\ApiServiceProvider',
+        'LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider',
+        //Remove following if you're not using the ide-helper
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -150,6 +154,10 @@ return array(
 
 	'aliases' => array(
 
+        'API' => 'Dingo\Api\Facades\API',
+        'Controller' => 'Dingo\Api\Routing\Controller',
+        'AuthorizationServer' => 'LucaDegasperi\OAuth2Server\Facades\AuthorizationServerFacade',
+        'ResourceServer' => 'LucaDegasperi\OAuth2Server\Facades\ResourceServerFacade',
 		'App'               => 'Illuminate\Support\Facades\App',
 		'Artisan'           => 'Illuminate\Support\Facades\Artisan',
 		'Auth'              => 'Illuminate\Support\Facades\Auth',
@@ -157,7 +165,7 @@ return array(
 		'Cache'             => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'       => 'Illuminate\Support\ClassLoader',
 		'Config'            => 'Illuminate\Support\Facades\Config',
-		'Controller'        => 'Illuminate\Routing\Controller',
+		//'Controller'        => 'Illuminate\Routing\Controller',
 		'Cookie'            => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'             => 'Illuminate\Support\Facades\Crypt',
 		'DB'                => 'Illuminate\Support\Facades\DB',

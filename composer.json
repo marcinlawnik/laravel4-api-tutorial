@@ -5,8 +5,9 @@
 	"license": "unlicense",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"dingo/api": "0.7-dev",
-		"fzaninotto/faker": "1.5.*"
+		"dingo/api": "0.*",
+		"fzaninotto/faker": "1.5.*",
+        "lucadegasperi/oauth2-server-laravel": "1.0.x"
 	},
 	"require-dev": {
 		"barryvdh/laravel-ide-helper": "1.*"
@@ -39,5 +40,5 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "dev"
 }
