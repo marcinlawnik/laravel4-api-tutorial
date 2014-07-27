@@ -22,6 +22,8 @@ composer.json.
     //DIY or leave "as is" if you're lazy,
     //but just do it for the sake of future self
 
+
+
 - To build our api we're going to use the following packages:
 
 
@@ -47,7 +49,7 @@ versions that weren't desired.
 
 - Add required service providers and aliases to `app/config/app.php`
 
-*Copypasta*
+#####Copypasta
 
     //Providers
     [
@@ -68,9 +70,11 @@ versions that weren't desired.
     	//'Controller'        => 'Illuminate\Routing\Controller',
     ]
 
+
+
 - Configure your database in `app/config/database.php`
 
-*Copypasta*
+#####Copypasta
 
     //DIY or be lazy like me
 
@@ -78,30 +82,38 @@ versions that weren't desired.
     'default' => 'sqlite',
     ]
 
+
+
 - Run `composer install` to download the dependencies. A `composer.lock` file
 is created that limits installation to specific versions of our packages.
 
-*Copypasta*
+#####Copypasta
 
     composer install
 
+
+
 - Publish configuration files for packages.
 
-*Copypasta*
+#####Copypasta
 
     php artisan config:publish dingo/api
     php artisan config:publish lucadegasperi/oauth2-server-laravel
 
+
+
 - Configure the `vendor` of API in `app/config/packages/dingo/api/config.php`
 
-*Copypasta*
+#####Copypasta
 
     [
         'vendor' => 'DIY',
     ]
-    
+
+
+
 - Run migrations for packages
 
-*Copypasta*
+#####Copypasta
 
     php artisan migrate --package="lucadegasperi/oauth2-server-laravel"
